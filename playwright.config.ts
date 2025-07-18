@@ -2,9 +2,7 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   use: {
-    headless: true,
-    viewport: { width: 1280, height: 720 },
-    ignoreHTTPSErrors: true,
+    headless: false,
+    trace: 'on-first-retry', // ✅ Enables trace on first failure
   },
-  timeout: 60000,
 });
