@@ -1,0 +1,11 @@
+{
+  "name": "price-comparator",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "typescript": "^5.4.0"
+  }
+}
