@@ -6,3 +6,4 @@ export default defineConfig({
     trace: 'on-first-retry', // ✅ Enables trace on first failure
   },
 });
+

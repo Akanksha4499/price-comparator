@@ -4,16 +4,16 @@ test('Compare price of iPhone 15 Plus on Flipkart and Amazon', async ({ browser 
   const flipkartContext = await browser.newContext();
   const amazonContext = await browser.newContext();
 
-  const onlineshoppingsite = await flipkartContext.newPage();
-  const onlineshopping = await amazonContext.newPage();
+  const onlineshoppingsite = await flipkartContext.newPage(); // Flipkart
+  const onlineshopping = await amazonContext.newPage();       // Amazon
 
   const product = 'iphone 15 plus';
   let flipkartPrice = 0;
   let amazonPrice = 0;
 
   await Promise.all([
+    // Flipkart
     (async () => {
-      // Flipkart
       await onlineshoppingsite.goto('https://www.flipkart.com');
       expect(onlineshoppingsite.url()).toContain('flipkart');
       expect(await onlineshoppingsite.title()).toContain('Online Shopping Site');
@@ -39,8 +39,8 @@ test('Compare price of iPhone 15 Plus on Flipkart and Amazon', async ({ browser 
       }
     })(),
 
+    // Amazon
     (async () => {
-      // Amazon
       await onlineshopping.goto('https://www.amazon.in');
       expect(onlineshopping.url()).toContain('amazon');
       expect(await onlineshopping.title()).toContain('Amazon');
